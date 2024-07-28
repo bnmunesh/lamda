@@ -1,14 +1,22 @@
-# Library Management System
+# <u>Library Management System</u>
 
-## Overview
+# <u>Overview</u>
 
-This Library Management System (LMS) manages books, patrons, and branches within a library. It allows for operations like book lending, returning, and searching. The system also includes features for recommending books based on patron preferences.
+This Library Management System (LMS) manages books, patrons, and branches within a library. It allows for operations like book lending, returning, and searching. The system also includes features for recommending books based on patron preferences. 
 
-## Design Patterns
+The project tries to follow OOP's concepts, SOLID principles and some design patterns.
+
+### Separate Manager Classes:
+
+- **Single Responsibility Principle**: Each manager class has a clear responsibility, making the code easier to understand and maintain.
+- **Separation of Concerns**: Each manager handles a specific part of the system, making it easy to modify one part without affecting others.
+- **Flexibility**: Different managers can be tested and developed independently.
+
+# <u>Design Patterns</u>
 
 ### Singleton Pattern
 
-- **LibraryManagementSystem**: Ensures a single instance of the library management system is used throughout the application.
+- **LibraryManagementSystem**:  The use of the Singleton pattern ensures that there is only one instance of the entire library system, which centralizes the management of branches, patrons, inventory, and lending.
 
 ### Strategy Pattern
 
@@ -16,11 +24,11 @@ This Library Management System (LMS) manages books, patrons, and branches within
     - **RecommendByAuthor**: Recommends books based on favorite authors.
     - **RecommendByGenre**: Recommends books based on favorite genres.
 
-## Classes
+# <u>Classes</u>
 
 ### `Book`
 
-Represents a book with attributes like ID, title, author, ISBN, genre, and publication year. It also tracks whether the book is borrowed.
+Represents a book with attributes like ID, title, author, ISBN, genre(BookGenre enum), and publication year. It also tracks whether the book is borrowed(isBorrowed attributes).
 
 ### `Patron`
 
@@ -28,7 +36,7 @@ Represents a library patron. Tracks borrowed books, borrowing history, favorite 
 
 ### `Branch`
 
-Represents a library branch containing book inventory and search capabilities. Manages book transfers between branches.
+Represents a library branch containing book inventory and search capabilities. Manages book transfers between branches. It is composed of BrnachDetails, BookInventory and SearchService classes
 
 ### `BranchDetails`
 
@@ -74,5 +82,52 @@ Recommends books based on the patron's favorite genres.
 
 Manages book recommendations using different strategies.
 
-## Class Diagram
+# <u>Main Operations</u>
+
+### Book Operations
+* **Add Book**: Add new books to the inventory.
+* **Remove Book**: Remove books from the inventory.
+* **Update Book**: Update book details in the inventory.
+* **Search Book**: Search for books by title, author, or ISBN.
+
+### Patron Operations
+* **Add Patron**: Add new patrons to the system.
+* **Remove Patron**: Remove patrons from the system.
+* **Update Patron**: Update patron details.
+
+### LibrarySystem Operations:
+### 1. Branch Operations
+* **Add Branch**: Add new branches to the system.
+* **Remove Branch**: Remove branches from the system.
+* **Transfer Book**: Transfer books between branches.
+
+### 2. Lending Operations
+* **Checkout Book**: Check out books to patrons.
+* **Return Book**: Return books to branches.
+
+### 3. Recommendation Operations
+* **Recommend Books**: Recommend books to patrons based on their preferences(byGenre or byAuthor).
+
+### 5. Reservation Operations
+* **Recommend Books**: Allows patrons to reserve a already borrowed book. And a notification would be sent to patron when the book is returned saying "its now available for borrow".
+
+### 4. Inventory Operations
+
+# <u>Improvements/Functionalities Not Addressed Yet</u>
+
+* The lending process lacks functionalities such as due dates and borrowing dates.
+* The return process does not check the borrowing date and due date to calculate fines.
+* The reservation and notification system is not foolproof and requires further improvements in the algorithm/business logic.
+ 
+
+# <u>Class Diagram</u>
+![Library Management System Class Diagram](/resources/class%20diagram.jpeg)
+
+
+
+# <u>Contribution</u>
+Feel free to fork the repository and submit pull requests with improvements or bug fixes.
+
+ 
+#### Munesh Kumar B N
 

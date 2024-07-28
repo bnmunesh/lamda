@@ -23,7 +23,7 @@ public class RecommendationManager {
         recommendBooks(PID, branchName, new RecommendByGenre());
     }
 
-    private void recommendBooks(String PID, String branchName, com.airtribe.library.recommendation.RecommendationStrategy strategy) {
+    private void recommendBooks(String PID, String branchName, RecommendationStrategy strategy) {
         Patron patron = LMS.getPatronById(PID);
         Branch branch = LMS.getBranchByBranchName(branchName);
 
