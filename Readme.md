@@ -6,11 +6,6 @@ This Library Management System (LMS) manages books, patrons, and branches within
 
 The project tries to follow OOP's concepts, SOLID principles and some design patterns.
 
-### Separate Manager Classes:
-
-- **Single Responsibility Principle**: Each manager class has a clear responsibility, making the code easier to understand and maintain.
-- **Separation of Concerns**: Each manager handles a specific part of the system, making it easy to modify one part without affecting others.
-- **Flexibility**: Different managers can be tested and developed independently.
 
 # <u>Design Patterns</u>
 
@@ -81,6 +76,12 @@ Recommends books based on the patron's favorite genres.
 ### `RecommendationManager`
 
 Manages book recommendations using different strategies.
+
+### Separate Manager Classes:
+
+- **Single Responsibility Principle**: Each manager class has a clear responsibility, making the code easier to understand and maintain.
+- **Separation of Concerns**: Each manager handles a specific part of the system, making it easy to modify one part without affecting others.
+- **Flexibility**: Different managers can be tested and developed independently.
 
 # <u>Main Operations</u>
 
